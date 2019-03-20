@@ -1,0 +1,4 @@
+numpy==1.13.3
+redis==2.10.6
+quadprog==0.1.6
+matplotlib==2.2.0

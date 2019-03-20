@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Jacobian</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script src="js/THREE.MeshLine.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jacobian.js"></script>
+</head>
+
+<body>
+	<div id="content"></div>
+	<div id="sidebar">
+		<div id="sidebar-keys"></div>
+		<div id="sidebar-description">
+			<p>
+			This application uses your implementation of <i>jacobian.py</i> to
+			visualize the linear and angular Jacobians. The Jacobians here are
+			expressed in frame {0}.
+			</p>
+
+			<p>
+			Each column <i>j</i> of the Jacobian corresponds to the velocity at
+			the end-effector produced by moving joint <i>j</i>. Click on a joint
+			to see its linear and angular velocity contributions at the
+			end-effector. Notice how the directions of these vectors are equal
+			to the corresponding columns in the Jaocbians.
+			</p>
+
+			<p>
+			Each row <i>i</i> of the Jacobian corresponds to the joint torques
+			required to produce the Cartesian force or moment at the
+			end-effector. Click on a direction in the end-effector frame to see
+			the torques required to produce a force or moment in that direction.
+			Notice how the magnitudes of these torques are equal to the
+			corresponding rows in the Jacobian.
+			</p>
+
+			<p>
+			You can modify the given robot by changing the <b>dh_table</b>
+			parameters or moving the end-effector position to a different
+			<b>ee_offset</b>. See the <a href="dh.html">DH Parameters</a>
+			visualization for more details on how to modify the DH parameters.
+			</p>
+
+			<p>
+				Key:
+				<ul>
+					<li><b>J_v</b> - linear Jacobian in frame 0</li>
+					<li><b>J_w</b> - angular Jacobian in frame 0</li>
+					<li><b>dh_table</b> - input (a<sub>i-1</sub>, &alpha;<sub>i-1</sub>, d<sub>i</sub>, &theta;<sub>i</sub>) DH parameters</li>
+					<li><b>ee_offset</b> - input end-effector offset in the last frame</li>
+					<li><b>q</b> - input desired joint positions</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>

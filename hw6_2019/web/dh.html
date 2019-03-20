@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>DH Parameters</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script src="js/THREE.MeshLine.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/dh.js"></script>
+</head>
+
+<body>
+	<div id="content"></div>
+	<div id="sidebar">
+		<div id="sidebar-keys"></div>
+		<div id="sidebar-description">
+			<p>
+			This application uses your implementation of <i>dh.py</i> to
+			visualize the forward kinematics of a robot.
+			</p>
+
+			<p>
+			Each row of <b>dh_table</b> specifies a joint frame of the robot.
+			For prismatic joints, keep d<sub>i</sub> empty, and for revolute
+			joints, keep &theta;<sub>i</sub> empty. These joint variables are
+			specified by <b>q</b>.
+			</p>
+
+			<p>
+			To add a new link to the robot, fill in the last row of
+			<b>dh_table</b>. A new blank row will appear to continue adding new
+			links.
+			</p>
+
+			<p>
+				Key:
+				<ul>
+					<li><b>T_ee_to_0</b> - transformation matrix from the end-effector to the base</li>
+					<li><b>dh_table</b> - input (a<sub>i-1</sub>, &alpha;<sub>i-1</sub>, d<sub>i</sub>, &theta;<sub>i</sub>) DH parameters</li>
+					<li><b>q</b> - input desired joint positions</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>

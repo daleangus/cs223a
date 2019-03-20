@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Gimbal Lock | CS223a Visualizer</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<style>
+	form[data-key*="rotation_"] .key-header {
+		background-color: lightskyblue;
+	}
+	</style>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script src="js/THREE.MeshLine.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/gimbal_lock.js"></script>
+</head>
+
+<body>
+	<div id="content"></div>
+	<div id="sidebar">
+		<div id="sidebar-keys"></div>
+		<div id="sidebar-description">
+			<p>
+				This is a demonstration of gimbal lock using your implementation
+				of <i>rotations.py</i>. The ZYX Euler angles are represented
+				here as a 3-axis gimbal. The XYZ axes with white dots represent
+				the transformed frame and rotate with the inner ring of the
+				gimbal, while the axes on the far left represent the world
+				frame. From the current orientation, you can perform a rotation
+				operation about the yellow axis to observe the behavior of Euler
+				angle interpolation at singularity.
+			</p>
+
+			<p>
+				Notice how the axes of the Z and X Euler angles (&alpha; and
+				&gamma;) are lined up. Since they rotate together, there are
+				infinite combinations of &alpha; and &gamma; that produce this
+				current configuration. Try setting &alpha; and &gamma; to 1, for
+				example.
+			</p>
+
+			<p>
+ 				The gimbal is also unable to instaneously rotate about the world
+				frame's X axis. Try performing a rotation about the X axis (see
+				usage below); the gimbal has to rotate off axis in order to
+				perform the rotation.
+			</p>
+
+
+			<p>
+				Key:
+				<ul>
+					<li><b>matrix</b> - input a desired rotation matrix</li>
+					<li><b>rotation_angle</b> - perform a rotation in radians about the yellow rotation axis</li>
+					<li><b>rotation_axis</b> - direction of the yellow rotation axis</li>
+					<li><b>xyz_fixed_angles</b> - input desired XYZ fixed angles</li>
+					<li><b>zyx_euler_angles</b> - input desired ZYX Euler angles</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>
